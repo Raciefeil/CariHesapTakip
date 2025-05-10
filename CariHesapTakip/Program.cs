@@ -1,22 +1,34 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using CariHesapTakip;  // UC_Musteri’nin namespace’i
 
 namespace CariHesapTakip
 {
-    internal static class Program
+    static class Program
     {
-        /// <summary>
-        /// Uygulamanın ana girdi noktası.
-        /// </summary>
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            // 1) UC_Musteri'yi barındıracak ana formu oluştur
+            var anaForm = new Form
+            {
+                Text = "Müşteri Yönetimi",
+                StartPosition = FormStartPosition.CenterScreen,
+                WindowState = FormWindowState.Maximized
+            };
+
+            // 2) UC_Musteri kontrolünü oluşturup formun tamamını kaplayacak şekilde ekle
+            var musteriControl = new UC_Musteri
+            {
+                Dock = DockStyle.Fill
+            };
+            anaForm.Controls.Add(musteriControl);
+
+            // 3) Uygulamayı bu form ile başlat
+            Application.Run(anaForm);
         }
     }
 }
