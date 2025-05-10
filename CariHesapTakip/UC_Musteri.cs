@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace CariHesapTakip
 {
-    public partial class Form1 : Form
+    public partial class UC_Musteri : UserControl
     {
-        public Form1()
+        public UC_Musteri()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
     }
 }
