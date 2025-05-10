@@ -71,6 +71,12 @@
     <Compile Include="Models\Urun.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UC_CariHesap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_CariHesap.Designer.cs">
+      <DependentUpon>UC_CariHesap.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_Musteri.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -89,6 +95,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UC_CariHesap.resx">
+      <DependentUpon>UC_CariHesap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_Musteri.resx">
       <DependentUpon>UC_Musteri.cs</DependentUpon>
     </EmbeddedResource>
