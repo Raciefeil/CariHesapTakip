@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.dgvMusteri = new System.Windows.Forms.DataGridView();
             this.lblAd = new System.Windows.Forms.Label();
             this.lblSoyad = new System.Windows.Forms.Label();
             this.lblTelefon = new System.Windows.Forms.Label();
@@ -43,6 +42,7 @@
             this.btnKaydet = new System.Windows.Forms.Button();
             this.btnGuncelle = new System.Windows.Forms.Button();
             this.btnSil = new System.Windows.Forms.Button();
+            this.dgvMusteri = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMusteri)).BeginInit();
             this.SuspendLayout();
@@ -52,7 +52,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.5F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.5F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 201F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 202F));
             this.tableLayoutPanel1.Controls.Add(this.lblAd, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblSoyad, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblTelefon, 0, 2);
@@ -78,22 +78,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(746, 194);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // dgvMusteri
-            // 
-            this.dgvMusteri.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvMusteri.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvMusteri.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMusteri.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvMusteri.Location = new System.Drawing.Point(0, 194);
-            this.dgvMusteri.Name = "dgvMusteri";
-            this.dgvMusteri.ReadOnly = true;
-            this.dgvMusteri.RowHeadersWidth = 62;
-            this.dgvMusteri.RowTemplate.Height = 28;
-            this.dgvMusteri.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMusteri.Size = new System.Drawing.Size(746, 382);
-            this.dgvMusteri.TabIndex = 1;
-            this.dgvMusteri.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // lblAd
             // 
@@ -218,6 +202,21 @@
             this.btnSil.TabIndex = 12;
             this.btnSil.Text = "Sil";
             this.btnSil.UseVisualStyleBackColor = true;
+            // 
+            // dgvMusteri
+            // 
+            this.dgvMusteri.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvMusteri.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvMusteri.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMusteri.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvMusteri.Location = new System.Drawing.Point(0, 194);
+            this.dgvMusteri.Name = "dgvMusteri";
+            this.dgvMusteri.ReadOnly = true;
+            this.dgvMusteri.RowHeadersWidth = 62;
+            this.dgvMusteri.RowTemplate.Height = 28;
+            this.dgvMusteri.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMusteri.Size = new System.Drawing.Size(746, 382);
+            this.dgvMusteri.TabIndex = 1;
             // 
             // UC_Musteri
             // 
