@@ -11,6 +11,7 @@ namespace CariHesapTakip
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new MainForm());
 
             // 1) UC_Musteri'yi barındıracak ana formu oluştur
             var anaForm = new Form

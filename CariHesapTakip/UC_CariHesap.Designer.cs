@@ -33,8 +33,8 @@
             this.cmbMusteri = new System.Windows.Forms.ComboBox();
             this.lblHesapKodu = new System.Windows.Forms.Label();
             this.txtHesapKodu = new System.Windows.Forms.TextBox();
-            this.lblBakiye = new System.Windows.Forms.Label();
             this.txtBakiye = new System.Windows.Forms.TextBox();
+            this.lblBakiye = new System.Windows.Forms.Label();
             this.flpButtons = new System.Windows.Forms.FlowLayoutPanel();
             this.btnKaydet = new System.Windows.Forms.Button();
             this.btnGuncelle = new System.Windows.Forms.Button();
@@ -107,6 +107,14 @@
             this.txtHesapKodu.Size = new System.Drawing.Size(296, 26);
             this.txtHesapKodu.TabIndex = 3;
             // 
+            // txtBakiye
+            // 
+            this.txtBakiye.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtBakiye.Location = new System.Drawing.Point(304, 77);
+            this.txtBakiye.Name = "txtBakiye";
+            this.txtBakiye.Size = new System.Drawing.Size(296, 26);
+            this.txtBakiye.TabIndex = 5;
+            // 
             // lblBakiye
             // 
             this.lblBakiye.AutoSize = true;
@@ -117,14 +125,6 @@
             this.lblBakiye.TabIndex = 4;
             this.lblBakiye.Text = "Bakiye";
             this.lblBakiye.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtBakiye
-            // 
-            this.txtBakiye.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtBakiye.Location = new System.Drawing.Point(304, 77);
-            this.txtBakiye.Name = "txtBakiye";
-            this.txtBakiye.Size = new System.Drawing.Size(296, 26);
-            this.txtBakiye.TabIndex = 5;
             // 
             // flpButtons
             // 
