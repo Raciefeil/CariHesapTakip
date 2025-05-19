@@ -33,7 +33,15 @@
             this.lblBaslık = new System.Windows.Forms.Label();
             this.panelSidebar = new System.Windows.Forms.Panel();
             this.panelContent = new System.Windows.Forms.Panel();
+            this.btnMusteri = new System.Windows.Forms.Button();
+            this.btnCariKart = new System.Windows.Forms.Button();
+            this.btnHareket = new System.Windows.Forms.Button();
+            this.btnUrun = new System.Windows.Forms.Button();
+            this.btnPersonel = new System.Windows.Forms.Button();
+            this.btnOdemeTipi = new System.Windows.Forms.Button();
+            this.btnRapor = new System.Windows.Forms.Button();
             this.panelTop.SuspendLayout();
+            this.panelSidebar.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelTop
@@ -70,6 +78,13 @@
             // 
             // panelSidebar
             // 
+            this.panelSidebar.Controls.Add(this.btnRapor);
+            this.panelSidebar.Controls.Add(this.btnOdemeTipi);
+            this.panelSidebar.Controls.Add(this.btnPersonel);
+            this.panelSidebar.Controls.Add(this.btnUrun);
+            this.panelSidebar.Controls.Add(this.btnHareket);
+            this.panelSidebar.Controls.Add(this.btnCariKart);
+            this.panelSidebar.Controls.Add(this.btnMusteri);
             this.panelSidebar.Location = new System.Drawing.Point(0, 100);
             this.panelSidebar.Name = "panelSidebar";
             this.panelSidebar.Size = new System.Drawing.Size(200, 350);
@@ -81,6 +96,76 @@
             this.panelContent.Name = "panelContent";
             this.panelContent.Size = new System.Drawing.Size(600, 350);
             this.panelContent.TabIndex = 3;
+            // 
+            // btnMusteri
+            // 
+            this.btnMusteri.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMusteri.Location = new System.Drawing.Point(0, 0);
+            this.btnMusteri.Name = "btnMusteri";
+            this.btnMusteri.Size = new System.Drawing.Size(200, 50);
+            this.btnMusteri.TabIndex = 0;
+            this.btnMusteri.Text = "Müşteriler";
+            this.btnMusteri.UseVisualStyleBackColor = true;
+            // 
+            // btnCariKart
+            // 
+            this.btnCariKart.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCariKart.Location = new System.Drawing.Point(0, 50);
+            this.btnCariKart.Name = "btnCariKart";
+            this.btnCariKart.Size = new System.Drawing.Size(200, 50);
+            this.btnCariKart.TabIndex = 1;
+            this.btnCariKart.Text = "Cari Kartlar";
+            this.btnCariKart.UseVisualStyleBackColor = true;
+            // 
+            // btnHareket
+            // 
+            this.btnHareket.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnHareket.Location = new System.Drawing.Point(0, 100);
+            this.btnHareket.Name = "btnHareket";
+            this.btnHareket.Size = new System.Drawing.Size(200, 50);
+            this.btnHareket.TabIndex = 2;
+            this.btnHareket.Text = "Hareketler";
+            this.btnHareket.UseVisualStyleBackColor = true;
+            // 
+            // btnUrun
+            // 
+            this.btnUrun.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnUrun.Location = new System.Drawing.Point(0, 150);
+            this.btnUrun.Name = "btnUrun";
+            this.btnUrun.Size = new System.Drawing.Size(200, 50);
+            this.btnUrun.TabIndex = 3;
+            this.btnUrun.Text = "Ürünler";
+            this.btnUrun.UseVisualStyleBackColor = true;
+            // 
+            // btnPersonel
+            // 
+            this.btnPersonel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPersonel.Location = new System.Drawing.Point(0, 200);
+            this.btnPersonel.Name = "btnPersonel";
+            this.btnPersonel.Size = new System.Drawing.Size(200, 50);
+            this.btnPersonel.TabIndex = 4;
+            this.btnPersonel.Text = "button5";
+            this.btnPersonel.UseVisualStyleBackColor = true;
+            // 
+            // btnOdemeTipi
+            // 
+            this.btnOdemeTipi.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnOdemeTipi.Location = new System.Drawing.Point(0, 250);
+            this.btnOdemeTipi.Name = "btnOdemeTipi";
+            this.btnOdemeTipi.Size = new System.Drawing.Size(200, 50);
+            this.btnOdemeTipi.TabIndex = 5;
+            this.btnOdemeTipi.Text = "Ödeme Tipi";
+            this.btnOdemeTipi.UseVisualStyleBackColor = true;
+            // 
+            // btnRapor
+            // 
+            this.btnRapor.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRapor.Location = new System.Drawing.Point(0, 300);
+            this.btnRapor.Name = "btnRapor";
+            this.btnRapor.Size = new System.Drawing.Size(200, 50);
+            this.btnRapor.TabIndex = 6;
+            this.btnRapor.Text = "Raporlar";
+            this.btnRapor.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -96,6 +181,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
+            this.panelSidebar.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -107,5 +193,12 @@
         private System.Windows.Forms.Label lblBaslık;
         private System.Windows.Forms.Panel panelSidebar;
         private System.Windows.Forms.Panel panelContent;
+        private System.Windows.Forms.Button btnRapor;
+        private System.Windows.Forms.Button btnOdemeTipi;
+        private System.Windows.Forms.Button btnPersonel;
+        private System.Windows.Forms.Button btnUrun;
+        private System.Windows.Forms.Button btnHareket;
+        private System.Windows.Forms.Button btnCariKart;
+        private System.Windows.Forms.Button btnMusteri;
     }
 }
