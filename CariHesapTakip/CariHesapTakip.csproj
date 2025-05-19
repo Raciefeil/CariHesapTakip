@@ -105,6 +105,12 @@
     <Compile Include="UC_Rapor.Designer.cs">
       <DependentUpon>UC_Rapor.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_Urun.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Urun.Designer.cs">
+      <DependentUpon>UC_Urun.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -128,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC_Rapor.resx">
       <DependentUpon>UC_Rapor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Urun.resx">
+      <DependentUpon>UC_Urun.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
