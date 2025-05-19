@@ -105,6 +105,12 @@
     <Compile Include="UC_Musteri.Designer.cs">
       <DependentUpon>UC_Musteri.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_OdemeTipi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_OdemeTipi.Designer.cs">
+      <DependentUpon>UC_OdemeTipi.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_Personel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -146,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC_Musteri.resx">
       <DependentUpon>UC_Musteri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_OdemeTipi.resx">
+      <DependentUpon>UC_OdemeTipi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_Personel.resx">
       <DependentUpon>UC_Personel.cs</DependentUpon>
