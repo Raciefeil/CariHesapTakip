@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\CariContext.cs" />
+    <Compile Include="Data\MyDbConfiguration.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
