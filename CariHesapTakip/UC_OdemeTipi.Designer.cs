@@ -125,6 +125,7 @@
             this.btnOdemeEkle.TabIndex = 0;
             this.btnOdemeEkle.Text = "Ekle";
             this.btnOdemeEkle.UseVisualStyleBackColor = true;
+            this.btnOdemeEkle.Click += new System.EventHandler(this.btnOdemeEkle_Click_1);
             // 
             // btnOdemeGuncelle
             // 
@@ -162,8 +163,8 @@
             // 
             // UC_OdemeTipi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.Controls.Add(this.dgvOdeme);
             this.Controls.Add(this.tlpOdeme);
             this.Name = "UC_OdemeTipi";

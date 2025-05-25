@@ -68,5 +68,10 @@ namespace CariHesapTakip.UI.Controls
             if (dgvRapor.Columns["Id"] != null)
                 dgvRapor.Columns["Id"].Visible = false;
         }
+
+        private void btnRaporGetir_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

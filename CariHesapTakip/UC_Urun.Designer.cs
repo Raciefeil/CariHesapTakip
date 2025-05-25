@@ -178,6 +178,7 @@
             this.btnUrunEkle.TabIndex = 0;
             this.btnUrunEkle.Text = "Ekle";
             this.btnUrunEkle.UseVisualStyleBackColor = true;
+            this.btnUrunEkle.Click += new System.EventHandler(this.btnUrunEkle_Click_1);
             // 
             // btnUrunGuncelle
             // 
@@ -221,8 +222,8 @@
             // 
             // UC_Urun
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.Controls.Add(this.dgvUrun);
             this.Controls.Add(this.tlpUrun);
             this.Name = "UC_Urun";

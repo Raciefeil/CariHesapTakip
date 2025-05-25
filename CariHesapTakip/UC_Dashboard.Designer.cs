@@ -32,10 +32,9 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.flpMetrics = new System.Windows.Forms.FlowLayoutPanel();
-            this.chartMonthlyMovements = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.pnlTotalCustomers = new System.Windows.Forms.Panel();
-            this.lblTotalCustomersTitle = new System.Windows.Forms.Label();
             this.lblTotalCustomersValue = new System.Windows.Forms.Label();
+            this.lblTotalCustomersTitle = new System.Windows.Forms.Label();
             this.pnlTotalAccounts = new System.Windows.Forms.Panel();
             this.lblTotalAccountsValue = new System.Windows.Forms.Label();
             this.lblTotalAccountsTitle = new System.Windows.Forms.Label();
@@ -45,12 +44,13 @@
             this.pnlTotalMovements = new System.Windows.Forms.Panel();
             this.lblTotalMovementsValue = new System.Windows.Forms.Label();
             this.lblTotalMovementsTitle = new System.Windows.Forms.Label();
+            this.chartMonthlyMovements = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.flpMetrics.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartMonthlyMovements)).BeginInit();
             this.pnlTotalCustomers.SuspendLayout();
             this.pnlTotalAccounts.SuspendLayout();
             this.pnlTotalBalance.SuspendLayout();
             this.pnlTotalMovements.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartMonthlyMovements)).BeginInit();
             this.SuspendLayout();
             // 
             // flpMetrics
@@ -66,23 +66,6 @@
             this.flpMetrics.Size = new System.Drawing.Size(625, 120);
             this.flpMetrics.TabIndex = 0;
             // 
-            // chartMonthlyMovements
-            // 
-            chartArea2.Name = "ChartArea1";
-            this.chartMonthlyMovements.ChartAreas.Add(chartArea2);
-            this.chartMonthlyMovements.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend2.Name = "Legend1";
-            this.chartMonthlyMovements.Legends.Add(legend2);
-            this.chartMonthlyMovements.Location = new System.Drawing.Point(0, 120);
-            this.chartMonthlyMovements.Name = "chartMonthlyMovements";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chartMonthlyMovements.Series.Add(series2);
-            this.chartMonthlyMovements.Size = new System.Drawing.Size(625, 542);
-            this.chartMonthlyMovements.TabIndex = 1;
-            this.chartMonthlyMovements.Text = "chart1";
-            // 
             // pnlTotalCustomers
             // 
             this.pnlTotalCustomers.BackColor = System.Drawing.Color.White;
@@ -95,17 +78,6 @@
             this.pnlTotalCustomers.Size = new System.Drawing.Size(138, 100);
             this.pnlTotalCustomers.TabIndex = 0;
             // 
-            // lblTotalCustomersTitle
-            // 
-            this.lblTotalCustomersTitle.AutoSize = true;
-            this.lblTotalCustomersTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.lblTotalCustomersTitle.Location = new System.Drawing.Point(3, 27);
-            this.lblTotalCustomersTitle.Name = "lblTotalCustomersTitle";
-            this.lblTotalCustomersTitle.Size = new System.Drawing.Size(125, 20);
-            this.lblTotalCustomersTitle.TabIndex = 0;
-            this.lblTotalCustomersTitle.Text = "Toplam Müşteri";
-            this.lblTotalCustomersTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // lblTotalCustomersValue
             // 
             this.lblTotalCustomersValue.AutoSize = true;
@@ -116,7 +88,17 @@
             this.lblTotalCustomersValue.TabIndex = 1;
             this.lblTotalCustomersValue.Text = "0";
             this.lblTotalCustomersValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-     //       this.lblTotalCustomersValue.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // lblTotalCustomersTitle
+            // 
+            this.lblTotalCustomersTitle.AutoSize = true;
+            this.lblTotalCustomersTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblTotalCustomersTitle.Location = new System.Drawing.Point(3, 27);
+            this.lblTotalCustomersTitle.Name = "lblTotalCustomersTitle";
+            this.lblTotalCustomersTitle.Size = new System.Drawing.Size(125, 20);
+            this.lblTotalCustomersTitle.TabIndex = 0;
+            this.lblTotalCustomersTitle.Text = "Toplam Müşteri";
+            this.lblTotalCustomersTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnlTotalAccounts
             // 
@@ -220,16 +202,36 @@
             this.lblTotalMovementsTitle.Text = "Hareket Adedi";
             this.lblTotalMovementsTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // chartMonthlyMovements
+            // 
+            chartArea2.AxisX.MajorGrid.LineColor = System.Drawing.Color.LightGray;
+            chartArea2.AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea2.AxisY.MajorGrid.LineColor = System.Drawing.Color.LightGray;
+            chartArea2.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea2.Name = "ChartArea1";
+            this.chartMonthlyMovements.ChartAreas.Add(chartArea2);
+            this.chartMonthlyMovements.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend2.Name = "Legend1";
+            this.chartMonthlyMovements.Legends.Add(legend2);
+            this.chartMonthlyMovements.Location = new System.Drawing.Point(0, 120);
+            this.chartMonthlyMovements.Name = "chartMonthlyMovements";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartMonthlyMovements.Series.Add(series2);
+            this.chartMonthlyMovements.Size = new System.Drawing.Size(625, 542);
+            this.chartMonthlyMovements.TabIndex = 1;
+            this.chartMonthlyMovements.Text = "chart1";
+            // 
             // UC_Dashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.Controls.Add(this.chartMonthlyMovements);
             this.Controls.Add(this.flpMetrics);
             this.Name = "UC_Dashboard";
             this.Size = new System.Drawing.Size(625, 662);
             this.flpMetrics.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chartMonthlyMovements)).EndInit();
             this.pnlTotalCustomers.ResumeLayout(false);
             this.pnlTotalCustomers.PerformLayout();
             this.pnlTotalAccounts.ResumeLayout(false);
@@ -238,6 +240,7 @@
             this.pnlTotalBalance.PerformLayout();
             this.pnlTotalMovements.ResumeLayout(false);
             this.pnlTotalMovements.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartMonthlyMovements)).EndInit();
             this.ResumeLayout(false);
 
         }

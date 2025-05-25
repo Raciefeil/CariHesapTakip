@@ -120,5 +120,10 @@ namespace CariHesapTakip.UI.Controls
             db.SaveChanges();
             LoadUrunler();
         }
+
+        private void btnUrunEkle_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

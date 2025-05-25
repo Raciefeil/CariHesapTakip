@@ -187,8 +187,8 @@
             // 
             // UC_CariHesap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.Controls.Add(this.dgvCari);
             this.Controls.Add(this.tlpCari);
             this.Name = "UC_CariHesap";

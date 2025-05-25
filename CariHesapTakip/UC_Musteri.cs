@@ -34,20 +34,18 @@ namespace CariHesapTakip
         private void LoadCustomers()
         {
             var liste = db.Musteriler
-                .Select(m => new
-                {
-                    m.Id,
-                    m.Ad,
-                    m.Soyad,
-                    m.Telefon,
-                    m.Email,
-                    m.VergiNo
-                })
-                .ToList();
+          .Select(m => new {
+              m.Id,
+              m.Ad,
+              m.Soyad,
+              m.Telefon,
+              m.Email,
+              m.VergiNo
+          })
+          .ToList();
 
             dgvMusteri.DataSource = liste;
 
-            // Id sütununu gizlemek isterseniz:
             if (dgvMusteri.Columns["Id"] != null)
                 dgvMusteri.Columns["Id"].Visible = false;
         }

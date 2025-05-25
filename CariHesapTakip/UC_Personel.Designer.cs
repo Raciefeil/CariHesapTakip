@@ -200,6 +200,7 @@
             this.btnPersEkle.TabIndex = 0;
             this.btnPersEkle.Text = "Ekle";
             this.btnPersEkle.UseVisualStyleBackColor = true;
+            this.btnPersEkle.Click += new System.EventHandler(this.btnPersEkle_Click_1);
             // 
             // btnPersGuncelle
             // 
@@ -237,8 +238,8 @@
             // 
             // UC_Personel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.Controls.Add(this.dgvPersonel);
             this.Controls.Add(this.tlpPersonel);
             this.Name = "UC_Personel";

@@ -42,6 +42,9 @@
             this.btnHareketGuncelle = new System.Windows.Forms.Button();
             this.btnHareketSil = new System.Windows.Forms.Button();
             this.dgvHareket = new System.Windows.Forms.DataGridView();
+            this.cmbUrun = new System.Windows.Forms.ComboBox();
+            this.cmbOdemeTipi = new System.Windows.Forms.ComboBox();
+            this.cmbPersonel = new System.Windows.Forms.ComboBox();
             this.tlpHareket.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudMiktar)).BeginInit();
             this.flpHButtons.SuspendLayout();
@@ -50,29 +53,34 @@
             // 
             // tlpHareket
             // 
-            this.tlpHareket.ColumnCount = 4;
+            this.tlpHareket.ColumnCount = 6;
             this.tlpHareket.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpHareket.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpHareket.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpHareket.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpHareket.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.65072F));
+            this.tlpHareket.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.84689F));
+            this.tlpHareket.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.50239F));
+            this.tlpHareket.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 218F));
+            this.tlpHareket.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 222F));
             this.tlpHareket.Controls.Add(this.lblCari, 0, 0);
-            this.tlpHareket.Controls.Add(this.lblMiktar, 2, 0);
-            this.tlpHareket.Controls.Add(this.nudMiktar, 3, 0);
             this.tlpHareket.Controls.Add(this.cmbCari, 1, 0);
             this.tlpHareket.Controls.Add(this.lblTarih, 0, 1);
             this.tlpHareket.Controls.Add(this.dtpTarih, 1, 1);
-            this.tlpHareket.Controls.Add(this.lblTutar, 2, 1);
-            this.tlpHareket.Controls.Add(this.txtTutar, 3, 1);
             this.tlpHareket.Controls.Add(this.flpHButtons, 0, 2);
+            this.tlpHareket.Controls.Add(this.nudMiktar, 5, 0);
+            this.tlpHareket.Controls.Add(this.txtTutar, 5, 1);
+            this.tlpHareket.Controls.Add(this.lblTutar, 4, 1);
+            this.tlpHareket.Controls.Add(this.lblMiktar, 4, 0);
+            this.tlpHareket.Controls.Add(this.cmbUrun, 3, 0);
+            this.tlpHareket.Controls.Add(this.cmbOdemeTipi, 3, 1);
+            this.tlpHareket.Controls.Add(this.cmbPersonel, 2, 0);
             this.tlpHareket.Dock = System.Windows.Forms.DockStyle.Top;
             this.tlpHareket.Location = new System.Drawing.Point(0, 0);
             this.tlpHareket.Name = "tlpHareket";
             this.tlpHareket.RowCount = 3;
-            this.tlpHareket.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tlpHareket.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tlpHareket.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tlpHareket.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.tlpHareket.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tlpHareket.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tlpHareket.Size = new System.Drawing.Size(1134, 102);
+            this.tlpHareket.Size = new System.Drawing.Size(1134, 112);
             this.tlpHareket.TabIndex = 0;
             // 
             // lblCari
@@ -82,7 +90,7 @@
             this.lblCari.Location = new System.Drawing.Point(5, 5);
             this.lblCari.Margin = new System.Windows.Forms.Padding(5);
             this.lblCari.Name = "lblCari";
-            this.lblCari.Size = new System.Drawing.Size(273, 20);
+            this.lblCari.Size = new System.Drawing.Size(163, 22);
             this.lblCari.TabIndex = 0;
             this.lblCari.Text = "Cari Kart:";
             this.lblCari.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -90,83 +98,82 @@
             // lblMiktar
             // 
             this.lblMiktar.AutoSize = true;
-            this.lblMiktar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblMiktar.Location = new System.Drawing.Point(571, 5);
+            this.lblMiktar.Location = new System.Drawing.Point(697, 5);
             this.lblMiktar.Margin = new System.Windows.Forms.Padding(5);
             this.lblMiktar.Name = "lblMiktar";
-            this.lblMiktar.Size = new System.Drawing.Size(273, 20);
+            this.lblMiktar.Size = new System.Drawing.Size(58, 21);
             this.lblMiktar.TabIndex = 4;
             this.lblMiktar.Text = "Miktar:";
             this.lblMiktar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblMiktar.Click += new System.EventHandler(this.lblMiktar_Click);
             // 
             // nudMiktar
             // 
-            this.nudMiktar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.nudMiktar.Location = new System.Drawing.Point(852, 3);
+            this.nudMiktar.Location = new System.Drawing.Point(913, 3);
             this.nudMiktar.Name = "nudMiktar";
-            this.nudMiktar.Size = new System.Drawing.Size(279, 26);
+            this.nudMiktar.Size = new System.Drawing.Size(218, 29);
             this.nudMiktar.TabIndex = 5;
             // 
             // cmbCari
             // 
             this.cmbCari.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbCari.FormattingEnabled = true;
-            this.cmbCari.Location = new System.Drawing.Point(286, 3);
+            this.cmbCari.Location = new System.Drawing.Point(176, 3);
             this.cmbCari.Name = "cmbCari";
-            this.cmbCari.Size = new System.Drawing.Size(277, 28);
+            this.cmbCari.Size = new System.Drawing.Size(144, 29);
             this.cmbCari.TabIndex = 1;
+            this.cmbCari.SelectedIndexChanged += new System.EventHandler(this.cmbCari_SelectedIndexChanged);
             // 
             // lblTarih
             // 
             this.lblTarih.AutoSize = true;
             this.lblTarih.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTarih.Location = new System.Drawing.Point(5, 35);
+            this.lblTarih.Location = new System.Drawing.Point(5, 37);
             this.lblTarih.Margin = new System.Windows.Forms.Padding(5);
             this.lblTarih.Name = "lblTarih";
-            this.lblTarih.Size = new System.Drawing.Size(273, 20);
+            this.lblTarih.Size = new System.Drawing.Size(163, 18);
             this.lblTarih.TabIndex = 2;
             this.lblTarih.Text = "Tarih:";
             this.lblTarih.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // dtpTarih
             // 
+            this.dtpTarih.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpTarih.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpTarih.Location = new System.Drawing.Point(286, 33);
+            this.dtpTarih.Location = new System.Drawing.Point(176, 35);
             this.dtpTarih.Name = "dtpTarih";
-            this.dtpTarih.Size = new System.Drawing.Size(171, 26);
+            this.dtpTarih.Size = new System.Drawing.Size(144, 29);
             this.dtpTarih.TabIndex = 3;
             // 
             // lblTutar
             // 
             this.lblTutar.AutoSize = true;
-            this.lblTutar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTutar.Location = new System.Drawing.Point(571, 35);
+            this.lblTutar.Location = new System.Drawing.Point(697, 37);
             this.lblTutar.Margin = new System.Windows.Forms.Padding(5);
             this.lblTutar.Name = "lblTutar";
-            this.lblTutar.Size = new System.Drawing.Size(273, 20);
+            this.lblTutar.Size = new System.Drawing.Size(49, 18);
             this.lblTutar.TabIndex = 6;
             this.lblTutar.Text = "Tutar:";
             this.lblTutar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtTutar
             // 
-            this.txtTutar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtTutar.Location = new System.Drawing.Point(854, 35);
+            this.txtTutar.Location = new System.Drawing.Point(915, 37);
             this.txtTutar.Margin = new System.Windows.Forms.Padding(5);
             this.txtTutar.Name = "txtTutar";
-            this.txtTutar.Size = new System.Drawing.Size(275, 26);
+            this.txtTutar.Size = new System.Drawing.Size(214, 29);
             this.txtTutar.TabIndex = 7;
             // 
             // flpHButtons
             // 
-            this.tlpHareket.SetColumnSpan(this.flpHButtons, 4);
+            this.tlpHareket.SetColumnSpan(this.flpHButtons, 6);
             this.flpHButtons.Controls.Add(this.btnHareketEkle);
             this.flpHButtons.Controls.Add(this.btnHareketGuncelle);
             this.flpHButtons.Controls.Add(this.btnHareketSil);
             this.flpHButtons.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpHButtons.Location = new System.Drawing.Point(3, 63);
             this.flpHButtons.Name = "flpHButtons";
-            this.flpHButtons.Size = new System.Drawing.Size(1128, 36);
+            this.flpHButtons.Size = new System.Drawing.Size(1128, 46);
             this.flpHButtons.TabIndex = 8;
             this.flpHButtons.WrapContents = false;
             // 
@@ -199,27 +206,53 @@
             this.btnHareketSil.TabIndex = 2;
             this.btnHareketSil.Text = "Sil";
             this.btnHareketSil.UseVisualStyleBackColor = true;
+            this.btnHareketSil.Click += new System.EventHandler(this.btnHareketSil_Click_1);
             // 
             // dgvHareket
             // 
             this.dgvHareket.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHareket.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHareket.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvHareket.Location = new System.Drawing.Point(0, 102);
+            this.dgvHareket.Location = new System.Drawing.Point(0, 112);
             this.dgvHareket.Name = "dgvHareket";
             this.dgvHareket.ReadOnly = true;
             this.dgvHareket.RowHeadersWidth = 62;
             this.dgvHareket.RowTemplate.Height = 28;
             this.dgvHareket.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHareket.Size = new System.Drawing.Size(1134, 925);
+            this.dgvHareket.Size = new System.Drawing.Size(1134, 915);
             this.dgvHareket.TabIndex = 1;
+            // 
+            // cmbUrun
+            // 
+            this.cmbUrun.FormattingEnabled = true;
+            this.cmbUrun.Location = new System.Drawing.Point(484, 3);
+            this.cmbUrun.Name = "cmbUrun";
+            this.cmbUrun.Size = new System.Drawing.Size(205, 29);
+            this.cmbUrun.TabIndex = 9;
+            // 
+            // cmbOdemeTipi
+            // 
+            this.cmbOdemeTipi.FormattingEnabled = true;
+            this.cmbOdemeTipi.Location = new System.Drawing.Point(484, 35);
+            this.cmbOdemeTipi.Name = "cmbOdemeTipi";
+            this.cmbOdemeTipi.Size = new System.Drawing.Size(205, 29);
+            this.cmbOdemeTipi.TabIndex = 10;
+            // 
+            // cmbPersonel
+            // 
+            this.cmbPersonel.FormattingEnabled = true;
+            this.cmbPersonel.Location = new System.Drawing.Point(326, 3);
+            this.cmbPersonel.Name = "cmbPersonel";
+            this.cmbPersonel.Size = new System.Drawing.Size(152, 29);
+            this.cmbPersonel.TabIndex = 11;
             // 
             // UC_CariHareket
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.Controls.Add(this.dgvHareket);
             this.Controls.Add(this.tlpHareket);
+            this.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Name = "UC_CariHareket";
             this.Size = new System.Drawing.Size(1134, 1027);
             this.Load += new System.EventHandler(this.UC_CariHareket_Load);
@@ -248,5 +281,8 @@
         private System.Windows.Forms.Button btnHareketGuncelle;
         private System.Windows.Forms.Button btnHareketSil;
         private System.Windows.Forms.DataGridView dgvHareket;
+        private System.Windows.Forms.ComboBox cmbUrun;
+        private System.Windows.Forms.ComboBox cmbOdemeTipi;
+        private System.Windows.Forms.ComboBox cmbPersonel;
     }
 }

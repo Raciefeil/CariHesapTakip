@@ -113,5 +113,10 @@ namespace CariHesapTakip.UI.Controls
             db.SaveChanges();
             LoadOdemeTipleri();
         }
+
+        private void btnOdemeEkle_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

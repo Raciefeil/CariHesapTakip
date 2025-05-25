@@ -30,8 +30,8 @@ namespace CariHesapTakip.UI.Controls
 
         private void UC_CariHareket_Load(object sender, EventArgs e)
         {
-            // 1) Önce SQL’den sadece basit sütunları çekelim ve belleğe alalım
-            var temp = db.CariHesaplar
+            // 1) Cari hesapları önce SQL’den çek, sonra bellekte Display oluştur
+            var tempCari = db.CariHesaplar
                 .Include(c => c.Musteri)
                 .Select(c => new
                 {
@@ -41,24 +41,84 @@ namespace CariHesapTakip.UI.Controls
                     MusteriSoyad = c.Musteri.Soyad
                 })
                 .ToList();
-
-            // 2) Bellekte string birleştirmeyi yapıp Display listesi oluşturalım
-            var liste = temp
+            var listCari = tempCari
                 .Select(c => new
                 {
                     c.Id,
                     Display = $"{c.HesapKodu} ({c.MusteriAd} {c.MusteriSoyad})"
                 })
                 .ToList();
-
-            // 3) ComboBox'a ata
-            cmbCari.DataSource = liste;
-            cmbCari.DisplayMember = "Display";
+            cmbCari.DataSource = listCari;
             cmbCari.ValueMember = "Id";
+            cmbCari.DisplayMember = "Display";
             cmbCari.SelectedIndex = -1;
 
-            // 4) Hareket listesini yükle
+            // 2) Personel listesini doldur
+            var tempPers = db.Personeller
+                .Select(p => new
+                {
+                    p.Id,
+                    p.Ad,
+                    p.Soyad
+                })
+                .ToList();
+            var listPers = tempPers
+                .Select(p => new
+                {
+                    p.Id,
+                    Display = $"{p.Ad} {p.Soyad}"
+                })
+                .ToList();
+            cmbPersonel.DataSource = listPers;
+            cmbPersonel.ValueMember = "Id";
+            cmbPersonel.DisplayMember = "Display";
+            cmbPersonel.SelectedIndex = -1;
+
+            // 3) Ürün listesini doldur
+            var tempUrun = db.Urunler
+                .Select(u => new
+                {
+                    u.Id,
+                    u.Ad
+                })
+                .ToList();
+            var listUrun = tempUrun
+                .Select(u => new
+                {
+                    u.Id,
+                    Display = u.Ad
+                })
+                .ToList();
+            cmbUrun.DataSource = listUrun;
+            cmbUrun.ValueMember = "Id";
+            cmbUrun.DisplayMember = "Display";
+            cmbUrun.SelectedIndex = -1;
+
+            // 4) Ödeme tiplerini doldur
+            var tempOdeme = db.OdemeTipleri
+                .Select(o => new
+                {
+                    o.Id,
+                    o.TipAdi
+                })
+                .ToList();
+            var listOdeme = tempOdeme
+                .Select(o => new
+                {
+                    o.Id,
+                    Display = o.TipAdi
+                })
+                .ToList();
+            cmbOdemeTipi.DataSource = listOdeme;
+            cmbOdemeTipi.ValueMember = "Id";
+            cmbOdemeTipi.DisplayMember = "Display";
+            cmbOdemeTipi.SelectedIndex = -1;
+
+            // 5) Tüm hareketleri yükle
             LoadHareketler();
+
+            // 6) Formu temizle
+            ClearForm();
         }
 
         private void LoadHareketler()
@@ -87,25 +147,69 @@ namespace CariHesapTakip.UI.Controls
 
         private void BtnHareketEkle_Click(object sender, EventArgs e)
         {
+            // 1) Zorunlu seçimlerin kontrolü
             if (cmbCari.SelectedIndex < 0)
             {
                 MessageBox.Show("Önce bir cari hesap seçin.", "Uyarı",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (cmbPersonel.SelectedIndex < 0)
+            {
+                MessageBox.Show("Önce bir personel seçin.", "Uyarı",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (cmbUrun.SelectedIndex < 0)
+            {
+                MessageBox.Show("Önce bir ürün seçin.", "Uyarı",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (cmbOdemeTipi.SelectedIndex < 0)
+            {
+                MessageBox.Show("Önce bir ödeme tipi seçin.", "Uyarı",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
+            // 2) Yeni hareket nesnesini oluştur
             var h = new CariHareket
             {
                 CariHesapId = (int)cmbCari.SelectedValue,
+                PersonelId = (int)cmbPersonel.SelectedValue,
+                UrunId = (int)cmbUrun.SelectedValue,
+                OdemeTipiId = (int)cmbOdemeTipi.SelectedValue,
                 Tarih = dtpTarih.Value,
                 Miktar = (int)nudMiktar.Value,
-                Tutar = decimal.TryParse(txtTutar.Text, out var t) ? t : 0,
-                Aciklama = "" // İstersen ayrı bir TextBox ekleyip alabilirsiniz
+                Tutar = decimal.TryParse(txtTutar.Text, out var t) ? t : 0m,
+                Aciklama = ""
             };
 
             db.Hareketler.Add(h);
             db.SaveChanges();
+
             LoadHareketler();
+
+            // Burada ClearForm()’u çağırıyoruz:
+            ClearForm();
+        }
+
+        /// <summary>
+        /// Formu varsayılan durumuna çevirir, tüm seçimleri sıfırlar.
+        /// </summary>
+        private void ClearForm()
+        {
+            cmbCari.SelectedIndex = -1;
+            cmbPersonel.SelectedIndex = -1;
+            cmbUrun.SelectedIndex = -1;
+            cmbOdemeTipi.SelectedIndex = -1;
+
+            dtpTarih.Value = DateTime.Now;
+            nudMiktar.Value = 0;
+            txtTutar.Clear();
+
+            dgvHareket.ClearSelection();
         }
 
         private void DgvHareket_SelectionChanged(object sender, EventArgs e)
@@ -134,6 +238,9 @@ namespace CariHesapTakip.UI.Controls
             h.Tarih = dtpTarih.Value;
             h.Miktar = (int)nudMiktar.Value;
             h.Tutar = decimal.TryParse(txtTutar.Text, out var t) ? t : h.Tutar;
+            h.PersonelId = (int)cmbPersonel.SelectedValue;
+            h.UrunId = (int)cmbUrun.SelectedValue;
+            h.OdemeTipiId = (int)cmbOdemeTipi.SelectedValue;
 
             db.SaveChanges();
             LoadHareketler();
@@ -154,6 +261,21 @@ namespace CariHesapTakip.UI.Controls
             db.Hareketler.Remove(h);
             db.SaveChanges();
             LoadHareketler();
+        }
+
+        private void btnHareketSil_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbCari_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblMiktar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

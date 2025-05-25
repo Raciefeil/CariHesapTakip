@@ -126,5 +126,10 @@ namespace CariHesapTakip.UI.Controls
             db.SaveChanges();
             LoadPersoneller();
         }
+
+        private void btnPersEkle_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

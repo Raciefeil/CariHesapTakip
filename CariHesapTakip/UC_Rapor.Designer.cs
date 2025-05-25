@@ -112,6 +112,7 @@
             this.btnRaporGetir.TabIndex = 4;
             this.btnRaporGetir.Text = "Raporu Getir";
             this.btnRaporGetir.UseVisualStyleBackColor = true;
+            this.btnRaporGetir.Click += new System.EventHandler(this.btnRaporGetir_Click_1);
             // 
             // dgvRapor
             // 
@@ -128,8 +129,8 @@
             // 
             // UC_Rapor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.Controls.Add(this.dgvRapor);
             this.Controls.Add(this.tlpRapor);
             this.Name = "UC_Rapor";
