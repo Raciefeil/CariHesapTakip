@@ -76,5 +76,32 @@ namespace CariHesapTakip
             }
             this.Close();
         }
+
+        private void btnGiriş_Click(object sender, EventArgs e)
+        {
+            var username = txtKullanıcıAdı.Text.Trim();
+            var password = txtParola.Text;
+
+            // Validasyon
+            if (username == "" || password == "")
+            {
+                MessageBox.Show("Kullanıcı adı ve parola girin.", "Uyarı",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var user = db.Users.FirstOrDefault(u => u.Username == username);
+            if (user == null ||
+                user.PasswordHash != HashHelper.ComputeSha256Hash(password))
+            {
+                MessageBox.Show("Kullanıcı adı veya parola hatalı.", "Hata",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Giriş başarılı → DialogResult.OK ile formu kapat
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
     }
 }

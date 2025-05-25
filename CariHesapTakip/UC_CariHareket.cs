@@ -30,21 +30,34 @@ namespace CariHesapTakip.UI.Controls
 
         private void UC_CariHareket_Load(object sender, EventArgs e)
         {
-            // ComboBox'a cari hesapları yükle
-            cmbCari.DataSource = db.CariHesaplar
+            // 1) Önce SQL’den sadece basit sütunları çekelim ve belleğe alalım
+            var temp = db.CariHesaplar
                 .Include(c => c.Musteri)
                 .Select(c => new
                 {
                     c.Id,
-                    Display = $"{c.HesapKodu} ({c.Musteri.Ad} {c.Musteri.Soyad})"
+                    c.HesapKodu,
+                    MusteriAd = c.Musteri.Ad,
+                    MusteriSoyad = c.Musteri.Soyad
                 })
                 .ToList();
 
+            // 2) Bellekte string birleştirmeyi yapıp Display listesi oluşturalım
+            var liste = temp
+                .Select(c => new
+                {
+                    c.Id,
+                    Display = $"{c.HesapKodu} ({c.MusteriAd} {c.MusteriSoyad})"
+                })
+                .ToList();
+
+            // 3) ComboBox'a ata
+            cmbCari.DataSource = liste;
             cmbCari.DisplayMember = "Display";
             cmbCari.ValueMember = "Id";
             cmbCari.SelectedIndex = -1;
 
-            // Listeyi doldur
+            // 4) Hareket listesini yükle
             LoadHareketler();
         }
 

@@ -23,15 +23,21 @@ namespace CariHesapTakip.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            // Sadece CariHesap.Bakiye kolonunu SQL'de decimal(18,2) olarak tanımla
+            // CariHesap tablosundaki Bakiye
             modelBuilder.Entity<CariHesap>()
                 .Property(c => c.Bakiye)
                 .HasColumnType("decimal")
                 .HasPrecision(18, 2);
 
-            // Sadece CariHareket.Tutar kolonunu SQL'de decimal(18,2) olarak tanımla
+            // CariHareket tablosundaki Tutar
             modelBuilder.Entity<CariHareket>()
                 .Property(h => h.Tutar)
+                .HasColumnType("decimal")
+                .HasPrecision(18, 2);
+
+            // URUN tablosundaki BirimFiyat
+            modelBuilder.Entity<Urun>()
+                .Property(u => u.BirimFiyat)
                 .HasColumnType("decimal")
                 .HasPrecision(18, 2);
         }

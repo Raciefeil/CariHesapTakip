@@ -56,6 +56,7 @@
             this.btnGiriş.TabIndex = 1;
             this.btnGiriş.Text = "Giriş:";
             this.btnGiriş.UseVisualStyleBackColor = true;
+            this.btnGiriş.Click += new System.EventHandler(this.btnGiriş_Click);
             // 
             // btnİptal
             // 

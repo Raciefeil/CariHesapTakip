@@ -79,5 +79,10 @@ namespace CariHesapTakip
             uc.Dock = DockStyle.Fill;
             panelContent.Controls.Add(uc);
         }
+
+        private void btnKapat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

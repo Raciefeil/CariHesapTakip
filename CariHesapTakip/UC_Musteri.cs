@@ -170,5 +170,66 @@ namespace CariHesapTakip
         private void dgvMusteri_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
         }
+
+        private void btnSil_Click_1(object sender, EventArgs e)
+        {
+            // Seçili satır yoksa uyarı
+            if (dgvMusteri.CurrentRow == null)
+            {
+                MessageBox.Show("Silmek için bir kayıt seçin.", "Uyarı",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Id’yi al, silme onayı, sil ve yeniden yükle
+            int id = (int)dgvMusteri.CurrentRow.Cells["Id"].Value;
+            var m = db.Musteriler.Find(id);
+            if (m == null) return;
+
+            if (MessageBox.Show("Seçili kaydı silmek istediğinize emin misiniz?",
+                    "Onay", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                != DialogResult.Yes) return;
+
+            db.Musteriler.Remove(m);
+            db.SaveChanges();
+            LoadCustomers();
+            ClearForm();
+        }
+
+        private void btnGuncelle_Click_1(object sender, EventArgs e)
+        {
+            // Seçili satır yoksa uyar
+            if (dgvMusteri.CurrentRow == null)
+            {
+                MessageBox.Show("Güncellemek için bir kayıt seçin.", "Uyarı",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int id = (int)dgvMusteri.CurrentRow.Cells["Id"].Value;
+            var m = db.Musteriler.Find(id);
+            if (m == null) return;
+
+            // Validasyon
+            if (string.IsNullOrWhiteSpace(txtAd.Text) ||
+                string.IsNullOrWhiteSpace(txtSoyad.Text))
+            {
+                MessageBox.Show("Ad ve Soyad alanlarını doldurun.", "Uyarı",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Alanları güncelle
+            m.Ad = txtAd.Text.Trim();
+            m.Soyad = txtSoyad.Text.Trim();
+            m.Telefon = txtTelefon.Text.Trim();
+            m.Email = txtEmail.Text.Trim();
+            m.VergiNo = txtVergiNo.Text.Trim();
+
+            db.SaveChanges();
+
+            LoadCustomers();
+            ClearForm();
+        }
     }
 }

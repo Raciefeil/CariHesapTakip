@@ -76,7 +76,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(746, 194);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1167, 194);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // lblAd
@@ -132,41 +132,41 @@
             // txtAd
             // 
             this.txtAd.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtAd.Location = new System.Drawing.Point(207, 3);
+            this.txtAd.Location = new System.Drawing.Point(364, 3);
             this.txtAd.Name = "txtAd";
-            this.txtAd.Size = new System.Drawing.Size(334, 26);
+            this.txtAd.Size = new System.Drawing.Size(597, 26);
             this.txtAd.TabIndex = 5;
             // 
             // txtSoyad
             // 
             this.txtSoyad.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtSoyad.Location = new System.Drawing.Point(207, 33);
+            this.txtSoyad.Location = new System.Drawing.Point(364, 33);
             this.txtSoyad.Name = "txtSoyad";
-            this.txtSoyad.Size = new System.Drawing.Size(334, 26);
+            this.txtSoyad.Size = new System.Drawing.Size(597, 26);
             this.txtSoyad.TabIndex = 6;
             // 
             // txtTelefon
             // 
             this.txtTelefon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtTelefon.Location = new System.Drawing.Point(207, 63);
+            this.txtTelefon.Location = new System.Drawing.Point(364, 63);
             this.txtTelefon.Name = "txtTelefon";
-            this.txtTelefon.Size = new System.Drawing.Size(334, 26);
+            this.txtTelefon.Size = new System.Drawing.Size(597, 26);
             this.txtTelefon.TabIndex = 7;
             // 
             // txtEmail
             // 
             this.txtEmail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtEmail.Location = new System.Drawing.Point(207, 93);
+            this.txtEmail.Location = new System.Drawing.Point(364, 93);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(334, 26);
+            this.txtEmail.Size = new System.Drawing.Size(597, 26);
             this.txtEmail.TabIndex = 8;
             // 
             // txtVergiNo
             // 
             this.txtVergiNo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtVergiNo.Location = new System.Drawing.Point(207, 123);
+            this.txtVergiNo.Location = new System.Drawing.Point(364, 123);
             this.txtVergiNo.Name = "txtVergiNo";
-            this.txtVergiNo.Size = new System.Drawing.Size(334, 26);
+            this.txtVergiNo.Size = new System.Drawing.Size(597, 26);
             this.txtVergiNo.TabIndex = 9;
             // 
             // btnKaydet
@@ -175,7 +175,7 @@
             this.btnKaydet.Location = new System.Drawing.Point(5, 155);
             this.btnKaydet.Margin = new System.Windows.Forms.Padding(5);
             this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(194, 34);
+            this.btnKaydet.Size = new System.Drawing.Size(351, 34);
             this.btnKaydet.TabIndex = 10;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = true;
@@ -184,24 +184,26 @@
             // btnGuncelle
             // 
             this.btnGuncelle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnGuncelle.Location = new System.Drawing.Point(209, 155);
+            this.btnGuncelle.Location = new System.Drawing.Point(366, 155);
             this.btnGuncelle.Margin = new System.Windows.Forms.Padding(5);
             this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(330, 34);
+            this.btnGuncelle.Size = new System.Drawing.Size(593, 34);
             this.btnGuncelle.TabIndex = 11;
             this.btnGuncelle.Text = "Güncelle";
             this.btnGuncelle.UseVisualStyleBackColor = true;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click_1);
             // 
             // btnSil
             // 
             this.btnSil.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSil.Location = new System.Drawing.Point(549, 155);
+            this.btnSil.Location = new System.Drawing.Point(969, 155);
             this.btnSil.Margin = new System.Windows.Forms.Padding(5);
             this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(192, 34);
+            this.btnSil.Size = new System.Drawing.Size(193, 34);
             this.btnSil.TabIndex = 12;
             this.btnSil.Text = "Sil";
             this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click_1);
             // 
             // dgvMusteri
             // 
@@ -215,7 +217,7 @@
             this.dgvMusteri.RowHeadersWidth = 62;
             this.dgvMusteri.RowTemplate.Height = 28;
             this.dgvMusteri.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMusteri.Size = new System.Drawing.Size(746, 382);
+            this.dgvMusteri.Size = new System.Drawing.Size(1167, 697);
             this.dgvMusteri.TabIndex = 1;
             // 
             // UC_Musteri
@@ -225,7 +227,7 @@
             this.Controls.Add(this.dgvMusteri);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "UC_Musteri";
-            this.Size = new System.Drawing.Size(746, 576);
+            this.Size = new System.Drawing.Size(1167, 891);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMusteri)).EndInit();

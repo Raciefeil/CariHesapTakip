@@ -25,15 +25,24 @@ namespace CariHesapTakip.UI.Controls
         }
 
         private void UC_Dashboard_Load(object sender, EventArgs e)
-        {
-            // 1) Temel metrikleri alıp kartlardaki label'lara yaz
-            lblTotalCustomersValue.Text = db.Musteriler.Count().ToString();
-            lblTotalAccountsValue.Text = db.CariHesaplar.Count().ToString();
-            lblTotalBalanceValue.Text = db.CariHesaplar.Sum(c => c.Bakiye).ToString("N2");
-            lblTotalMovementsValue.Text = db.Hareketler.Count().ToString();
+        {// 0) Tüm hareketleri, cari hesapları ve müşterileri önce belleğe al:
+            var allHareketler = db.Hareketler.ToList();
+            var allCariHesaplar = db.CariHesaplar
+                                    .Include(c => c.Musteri)
+                                    .ToList();
 
-            // 2) Aylık hareket toplamlarını gruplandır
-            var data = db.Hareketler
+            // 1) Kartlardaki metrikler
+            lblTotalCustomersValue.Text = db.Musteriler.Count().ToString();
+            lblTotalAccountsValue.Text = allCariHesaplar.Count().ToString();
+
+            // Bellekte toplama yapılacağından artık null problemi kalmaz
+            var totalBalance = allCariHesaplar.Sum(c => c.Bakiye);
+            lblTotalBalanceValue.Text = totalBalance.ToString("N2");
+
+            lblTotalMovementsValue.Text = allHareketler.Count.ToString();
+
+            // 2) Aylık hareket toplamları (bellekte)
+            var data = allHareketler
                 .GroupBy(h => new { h.Tarih.Year, h.Tarih.Month })
                 .Select(g => new
                 {
@@ -43,7 +52,7 @@ namespace CariHesapTakip.UI.Controls
                 .OrderBy(x => x.Month)
                 .ToList();
 
-            // 3) Chart'ı temizle ve yeni series ekle
+            // 3) Chart ayarları
             chartMonthlyMovements.Series.Clear();
             var series = new Series("Aylık Tutar")
             {
@@ -53,7 +62,6 @@ namespace CariHesapTakip.UI.Controls
             };
             chartMonthlyMovements.Series.Add(series);
 
-            // 4) Ekseni biçimlendir
             var area = chartMonthlyMovements.ChartAreas[0];
             area.AxisX.LabelStyle.Format = "MMM yy";
             area.AxisX.IntervalType = DateTimeIntervalType.Months;
@@ -61,7 +69,6 @@ namespace CariHesapTakip.UI.Controls
             area.AxisX.MajorGrid.Enabled = false;
             area.AxisY.MajorGrid.LineDashStyle = ChartDashStyle.Dash;
 
-            // 5) Veriyi bağla ve çiz
             chartMonthlyMovements.DataSource = data;
             chartMonthlyMovements.DataBind();
         }

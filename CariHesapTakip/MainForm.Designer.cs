@@ -64,6 +64,7 @@
             this.btnKapat.TabIndex = 1;
             this.btnKapat.Text = "X";
             this.btnKapat.UseVisualStyleBackColor = true;
+            this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
             // 
             // lblBaslık
             // 
