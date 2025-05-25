@@ -16,6 +16,8 @@ namespace CariHesapTakip.Data
         public DbSet<OdemeTipi> OdemeTipleri { get; set; }
         public DbSet<CariHesap> CariHesaplar { get; set; }
         public DbSet<CariHareket> Hareketler { get; set; }
+        public DbSet<User> Users { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
