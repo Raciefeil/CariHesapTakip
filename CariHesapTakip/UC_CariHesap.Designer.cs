@@ -147,6 +147,7 @@
             this.btnKaydet.TabIndex = 0;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = true;
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click_1);
             // 
             // btnGuncelle
             // 
@@ -157,6 +158,7 @@
             this.btnGuncelle.TabIndex = 1;
             this.btnGuncelle.Text = "Güncelle";
             this.btnGuncelle.UseVisualStyleBackColor = true;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click_1);
             // 
             // btnSil
             // 
@@ -167,6 +169,7 @@
             this.btnSil.TabIndex = 2;
             this.btnSil.Text = "Sil";
             this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click_1);
             // 
             // dgvCari
             // 
