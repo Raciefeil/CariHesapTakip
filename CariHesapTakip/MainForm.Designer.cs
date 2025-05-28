@@ -79,6 +79,7 @@
             // 
             // panelSidebar
             // 
+            this.panelSidebar.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.panelSidebar.Controls.Add(this.btnRapor);
             this.panelSidebar.Controls.Add(this.btnOdemeTipi);
             this.panelSidebar.Controls.Add(this.btnPersonel);
@@ -94,74 +95,88 @@
             // 
             // btnRapor
             // 
+            this.btnRapor.BackColor = System.Drawing.Color.Transparent;
             this.btnRapor.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRapor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSlateGray;
             this.btnRapor.Location = new System.Drawing.Point(0, 433);
             this.btnRapor.Name = "btnRapor";
             this.btnRapor.Size = new System.Drawing.Size(200, 61);
             this.btnRapor.TabIndex = 6;
             this.btnRapor.Text = "Raporlar";
-            this.btnRapor.UseVisualStyleBackColor = true;
+            this.btnRapor.UseVisualStyleBackColor = false;
             // 
             // btnOdemeTipi
             // 
+            this.btnOdemeTipi.BackColor = System.Drawing.Color.Transparent;
             this.btnOdemeTipi.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnOdemeTipi.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSlateGray;
             this.btnOdemeTipi.Location = new System.Drawing.Point(0, 362);
             this.btnOdemeTipi.Name = "btnOdemeTipi";
             this.btnOdemeTipi.Size = new System.Drawing.Size(200, 71);
             this.btnOdemeTipi.TabIndex = 5;
             this.btnOdemeTipi.Text = "Ödeme Tipi";
-            this.btnOdemeTipi.UseVisualStyleBackColor = true;
+            this.btnOdemeTipi.UseVisualStyleBackColor = false;
             // 
             // btnPersonel
             // 
+            this.btnPersonel.BackColor = System.Drawing.Color.Transparent;
             this.btnPersonel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPersonel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSlateGray;
             this.btnPersonel.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.btnPersonel.Location = new System.Drawing.Point(0, 293);
             this.btnPersonel.Name = "btnPersonel";
             this.btnPersonel.Size = new System.Drawing.Size(200, 69);
             this.btnPersonel.TabIndex = 4;
             this.btnPersonel.Text = "Personeller";
-            this.btnPersonel.UseVisualStyleBackColor = true;
+            this.btnPersonel.UseVisualStyleBackColor = false;
             // 
             // btnUrun
             // 
+            this.btnUrun.BackColor = System.Drawing.Color.Transparent;
             this.btnUrun.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnUrun.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSlateGray;
             this.btnUrun.Location = new System.Drawing.Point(0, 229);
             this.btnUrun.Name = "btnUrun";
             this.btnUrun.Size = new System.Drawing.Size(200, 64);
             this.btnUrun.TabIndex = 3;
             this.btnUrun.Text = "Ürünler";
-            this.btnUrun.UseVisualStyleBackColor = true;
+            this.btnUrun.UseVisualStyleBackColor = false;
             // 
             // btnHareket
             // 
+            this.btnHareket.BackColor = System.Drawing.Color.Transparent;
             this.btnHareket.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnHareket.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSlateGray;
             this.btnHareket.Location = new System.Drawing.Point(0, 156);
             this.btnHareket.Name = "btnHareket";
             this.btnHareket.Size = new System.Drawing.Size(200, 73);
             this.btnHareket.TabIndex = 2;
             this.btnHareket.Text = "Hareketler";
-            this.btnHareket.UseVisualStyleBackColor = true;
+            this.btnHareket.UseVisualStyleBackColor = false;
             // 
             // btnCariKart
             // 
+            this.btnCariKart.BackColor = System.Drawing.Color.Transparent;
             this.btnCariKart.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCariKart.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSlateGray;
             this.btnCariKart.Location = new System.Drawing.Point(0, 83);
             this.btnCariKart.Name = "btnCariKart";
             this.btnCariKart.Size = new System.Drawing.Size(200, 73);
             this.btnCariKart.TabIndex = 1;
             this.btnCariKart.Text = "Cari Kartlar";
-            this.btnCariKart.UseVisualStyleBackColor = true;
+            this.btnCariKart.UseVisualStyleBackColor = false;
             // 
             // btnMusteri
             // 
+            this.btnMusteri.BackColor = System.Drawing.Color.Transparent;
             this.btnMusteri.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMusteri.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSlateGray;
             this.btnMusteri.Location = new System.Drawing.Point(0, 0);
             this.btnMusteri.Name = "btnMusteri";
             this.btnMusteri.Size = new System.Drawing.Size(200, 83);
             this.btnMusteri.TabIndex = 0;
             this.btnMusteri.Text = "Müşteriler";
-            this.btnMusteri.UseVisualStyleBackColor = true;
+            this.btnMusteri.UseVisualStyleBackColor = false;
             // 
             // panelContent
             // 

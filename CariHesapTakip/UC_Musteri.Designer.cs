@@ -43,6 +43,8 @@
             this.btnGuncelle = new System.Windows.Forms.Button();
             this.btnSil = new System.Windows.Forms.Button();
             this.dgvMusteri = new System.Windows.Forms.DataGridView();
+            this.btnExportExcel = new System.Windows.Forms.Button();
+            this.btnExportPdf = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMusteri)).BeginInit();
             this.SuspendLayout();
@@ -52,7 +54,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.5F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.5F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 202F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 238F));
             this.tableLayoutPanel1.Controls.Add(this.lblAd, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblSoyad, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblTelefon, 0, 2);
@@ -66,6 +68,8 @@
             this.tableLayoutPanel1.Controls.Add(this.btnKaydet, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.btnGuncelle, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.btnSil, 2, 5);
+            this.tableLayoutPanel1.Controls.Add(this.btnExportExcel, 2, 4);
+            this.tableLayoutPanel1.Controls.Add(this.btnExportPdf, 2, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -73,11 +77,13 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1167, 194);
             this.tableLayoutPanel1.TabIndex = 0;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint_1);
             // 
             // lblAd
             // 
@@ -122,7 +128,7 @@
             // lblVergiNo
             // 
             this.lblVergiNo.AutoSize = true;
-            this.lblVergiNo.Location = new System.Drawing.Point(3, 120);
+            this.lblVergiNo.Location = new System.Drawing.Point(3, 122);
             this.lblVergiNo.Name = "lblVergiNo";
             this.lblVergiNo.Size = new System.Drawing.Size(70, 20);
             this.lblVergiNo.TabIndex = 4;
@@ -132,50 +138,50 @@
             // txtAd
             // 
             this.txtAd.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtAd.Location = new System.Drawing.Point(364, 3);
+            this.txtAd.Location = new System.Drawing.Point(351, 3);
             this.txtAd.Name = "txtAd";
-            this.txtAd.Size = new System.Drawing.Size(597, 26);
+            this.txtAd.Size = new System.Drawing.Size(574, 26);
             this.txtAd.TabIndex = 5;
             // 
             // txtSoyad
             // 
             this.txtSoyad.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtSoyad.Location = new System.Drawing.Point(364, 33);
+            this.txtSoyad.Location = new System.Drawing.Point(351, 33);
             this.txtSoyad.Name = "txtSoyad";
-            this.txtSoyad.Size = new System.Drawing.Size(597, 26);
+            this.txtSoyad.Size = new System.Drawing.Size(574, 26);
             this.txtSoyad.TabIndex = 6;
             // 
             // txtTelefon
             // 
             this.txtTelefon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtTelefon.Location = new System.Drawing.Point(364, 63);
+            this.txtTelefon.Location = new System.Drawing.Point(351, 63);
             this.txtTelefon.Name = "txtTelefon";
-            this.txtTelefon.Size = new System.Drawing.Size(597, 26);
+            this.txtTelefon.Size = new System.Drawing.Size(574, 26);
             this.txtTelefon.TabIndex = 7;
             // 
             // txtEmail
             // 
             this.txtEmail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtEmail.Location = new System.Drawing.Point(364, 93);
+            this.txtEmail.Location = new System.Drawing.Point(351, 93);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(597, 26);
+            this.txtEmail.Size = new System.Drawing.Size(574, 26);
             this.txtEmail.TabIndex = 8;
             // 
             // txtVergiNo
             // 
             this.txtVergiNo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtVergiNo.Location = new System.Drawing.Point(364, 123);
+            this.txtVergiNo.Location = new System.Drawing.Point(351, 125);
             this.txtVergiNo.Name = "txtVergiNo";
-            this.txtVergiNo.Size = new System.Drawing.Size(597, 26);
+            this.txtVergiNo.Size = new System.Drawing.Size(574, 26);
             this.txtVergiNo.TabIndex = 9;
             // 
             // btnKaydet
             // 
             this.btnKaydet.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnKaydet.Location = new System.Drawing.Point(5, 155);
+            this.btnKaydet.Location = new System.Drawing.Point(5, 161);
             this.btnKaydet.Margin = new System.Windows.Forms.Padding(5);
             this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(351, 34);
+            this.btnKaydet.Size = new System.Drawing.Size(338, 28);
             this.btnKaydet.TabIndex = 10;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = true;
@@ -184,10 +190,10 @@
             // btnGuncelle
             // 
             this.btnGuncelle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnGuncelle.Location = new System.Drawing.Point(366, 155);
+            this.btnGuncelle.Location = new System.Drawing.Point(353, 161);
             this.btnGuncelle.Margin = new System.Windows.Forms.Padding(5);
             this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(593, 34);
+            this.btnGuncelle.Size = new System.Drawing.Size(570, 28);
             this.btnGuncelle.TabIndex = 11;
             this.btnGuncelle.Text = "Güncelle";
             this.btnGuncelle.UseVisualStyleBackColor = true;
@@ -196,10 +202,10 @@
             // btnSil
             // 
             this.btnSil.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSil.Location = new System.Drawing.Point(969, 155);
+            this.btnSil.Location = new System.Drawing.Point(933, 161);
             this.btnSil.Margin = new System.Windows.Forms.Padding(5);
             this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(193, 34);
+            this.btnSil.Size = new System.Drawing.Size(229, 28);
             this.btnSil.TabIndex = 12;
             this.btnSil.Text = "Sil";
             this.btnSil.UseVisualStyleBackColor = true;
@@ -219,6 +225,28 @@
             this.dgvMusteri.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMusteri.Size = new System.Drawing.Size(1167, 697);
             this.dgvMusteri.TabIndex = 1;
+            // 
+            // btnExportExcel
+            // 
+            this.btnExportExcel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnExportExcel.Location = new System.Drawing.Point(928, 122);
+            this.btnExportExcel.Margin = new System.Windows.Forms.Padding(0);
+            this.btnExportExcel.Name = "btnExportExcel";
+            this.btnExportExcel.Size = new System.Drawing.Size(239, 34);
+            this.btnExportExcel.TabIndex = 13;
+            this.btnExportExcel.Text = "Excel’e Aktar";
+            this.btnExportExcel.UseVisualStyleBackColor = true;
+            // 
+            // btnExportPdf
+            // 
+            this.btnExportPdf.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnExportPdf.Location = new System.Drawing.Point(928, 90);
+            this.btnExportPdf.Margin = new System.Windows.Forms.Padding(0);
+            this.btnExportPdf.Name = "btnExportPdf";
+            this.btnExportPdf.Size = new System.Drawing.Size(239, 32);
+            this.btnExportPdf.TabIndex = 14;
+            this.btnExportPdf.Text = "PDF’e Aktar";
+            this.btnExportPdf.UseVisualStyleBackColor = true;
             // 
             // UC_Musteri
             // 
@@ -252,5 +280,7 @@
         private System.Windows.Forms.Button btnKaydet;
         private System.Windows.Forms.Button btnGuncelle;
         private System.Windows.Forms.Button btnSil;
+        private System.Windows.Forms.Button btnExportExcel;
+        private System.Windows.Forms.Button btnExportPdf;
     }
 }

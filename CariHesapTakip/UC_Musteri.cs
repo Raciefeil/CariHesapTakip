@@ -3,6 +3,7 @@ using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Windows.Forms;
 using CariHesapTakip.Data;    // DbContext’in olduğu namespace
+using CariHesapTakip.Helpers;
 using CariHesapTakip.Models;  // Musteri modelinin olduğu namespace
 
 namespace CariHesapTakip
@@ -20,6 +21,10 @@ namespace CariHesapTakip
             this.Load += UC_Musteri_Load;
             // DataGridView seçim değişikliğini bağla
             dgvMusteri.SelectionChanged += dgvMusteri_SelectionChanged;
+
+            btnExportExcel.Click += (s, e) => ExportHelper.ExportToExcel(dgvMusteri);
+            btnExportPdf.Click += (s, e) => ExportHelper.ExportToPdf(dgvMusteri);
+
         }
 
         private void UC_Musteri_Load(object sender, EventArgs e)
@@ -228,6 +233,11 @@ namespace CariHesapTakip
 
             LoadCustomers();
             ClearForm();
+        }
+
+        private void tableLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
